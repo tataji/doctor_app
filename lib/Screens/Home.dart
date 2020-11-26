@@ -1,7 +1,8 @@
+import 'package:doctor_app/model/DoctorModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../service/ApiService.dart';
-import '../model/DoctorModel.dart';
+import 'DoctorDetailsScreen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -28,21 +29,30 @@ class HomeState extends State<Home> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        children: [
-                          ClipRect(
-                            child: Container(width: 100,height: 100,
-                              child: Image.network(data.data[index].profilePic),),
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height/14,
-                                child: Text(data.data[index].firstName),
-                              )
-                            ],
-                          ),
-                        ],
+                      child: GestureDetector(onTap: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>
+                                DoctorDetailsScreen(data.data[index])));
+                      },
+                        child: Row(
+                          children: [
+                            ClipRect(
+                              child: Container(width: 100,height: 100,
+                                child: Image.network(data.data[index].profilePic),),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: MediaQuery.of(context).size.height/14,
+                                    child: Text(data.data[index].firstName),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'package:doctor_app/model/DoctorModel.dart';
 import 'package:http/http.dart' as http;
 
-import '../model/DoctorModel.dart';
 
 class APiService {
   static Future<List<DoctorModel>> fetchEmployee() async {
