@@ -1,4 +1,4 @@
-import 'file:///C:/Users/91850/Desktop/doctor_app/lib/Screens/Home.dart';
+import 'package:doctor_app/Screens/Home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

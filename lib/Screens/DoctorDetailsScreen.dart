@@ -19,17 +19,25 @@ class DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top:40.0),
-              child: Text(widget.doctorModel.firstName),
+      body: Stack(
+        children: [
+          Container(color: Colors.blue,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top:40.0),
+                  child: Text(widget.doctorModel.firstName),
+                ),
+
+              ],
             ),
-          ],
-        ),
+          ),
+          Container(height: MediaQuery.of(context).size.height-100,
+            color: Colors.white,
+            child: Text(""),)
+        ],
       ),
     );
   }
