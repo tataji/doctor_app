@@ -2,6 +2,8 @@ import 'package:doctor_app/Screens/Home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'Screens/SignInPage.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColorDark:  Color(0xFF2F579F),
        accentColor: Color(0xFFfab206),
       ),
-      home:Home(),
+      home:SignInScreen(),
     );
   }
 }

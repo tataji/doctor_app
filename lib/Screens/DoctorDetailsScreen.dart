@@ -18,21 +18,7 @@ class DoctorDetailsScreen extends StatefulWidget {
 }
 
 class DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    verifyPhoneNumber();
-  }
-  verifyPhoneNumber() async{
-    await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: '+91 7483782936',
-      verificationCompleted: (PhoneAuthCredential credential) {},
-      verificationFailed: (FirebaseAuthException e) {},
-      codeSent: (String verificationId, int resendToken) {},
-      codeAutoRetrievalTimeout: (String verificationId) {},
-    );
-  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
